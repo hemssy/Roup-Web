@@ -1,0 +1,41 @@
+#header {
+    display: flex;
+    justify-content : center;
+}
+
+#myPageUpper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#myPageTitle_text .nickname {
+    color: #FF9A95; 
+}
+
+#myPageTitle_text {
+    color: #000000; 
+}
+
+#nicknameChange_text {
+    padding: 15px;
+}
+
+#missionSettings_text {
+    padding: 15px;
+}
+
+button {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* ✅ 아이폰 텍스트 깨짐 방지 */
+body, html {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased; /* 텍스트 부드럽게 */
+    -moz-osx-font-smoothing: grayscale; /* 텍스트 부드럽게 */
+    text-rendering: optimizeLegibility; /* 글자 가독성 향상 */
+}

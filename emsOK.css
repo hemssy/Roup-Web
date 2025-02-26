@@ -1,0 +1,59 @@
+#header {
+    display: flex;
+    justify-content : center;
+}
+
+.myemsUpper_left{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+#myemsUpper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+button {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+
+.centerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10%; 
+    gap: 10px;
+}
+
+.emsOKBackButton {
+    width: 153px; 
+    height: 30px; 
+    background: #FF9A95; 
+    color: #FFFFFF;
+    border: none; 
+    border-radius: 5px; 
+    font-weight: 600; 
+    font-size: 18px; /* 텍스트 크기 */
+    line-height: 22px; /* 텍스트 높이 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    display: flex; /* Flexbox로 내부 정렬 */
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer; 
+}
+
+/*
+.emsOKBackButton:hover {
+    background: #FF7F7A;
+}
+*/
+
+.emsOKBackButton:active {
+    background: #E76E68; /* 클릭 시 버튼 색상 살짝 어둡게 */
+}

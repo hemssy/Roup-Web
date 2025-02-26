@@ -1,0 +1,490 @@
+#header {
+    display: flex;
+    justify-content : center;
+}
+
+#navBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+
+#year_month{
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 700;
+}
+#year {
+    color: #FF9A95; 
+}
+
+#month {
+    color: #000000; 
+}
+
+
+button {
+    all: unset; /* 버튼의 모든 기본 스타일 제거 */
+    display: inline-block; /* 버튼의 인라인-블록 특성 유지 */
+    cursor: pointer; /* 버튼처럼 클릭 가능한 커서 설정 */
+}
+
+#mission {
+    padding: 10px;
+}
+
+#morning_checklist {
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+}
+
+#evening_checklist {
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+}
+
+
+/*여기부터가 달력이에용*/
+
+/*weeklyCalendar.js의 generateWeeklyCalendar 함수에서 데이터를 동적으로 생성해 이 컨테이너에 추가한다.*/
+#weekly-calendar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: none; 
+    background-color: transparent; 
+}
+
+/*generateWeeklyCalendar 함수의 for 루프에서 생성된 각 요일의 날짜(dayElement)가 .day 클래스를 적용받는다.*/
+.day {
+    flex: 1;
+    text-align: center;
+    position: relative; /* 내부 요소 배치를 위한 기준 */
+}
+
+/*generateWeeklyCalendar에서 각 요일(dayName)과 날짜(date)를 span 요소로 생성하며, 각각 이 스타일을 적용받는다.*/
+.day span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 12px;
+    color: #000000;
+}
+
+/*generateWeeklyCalendar에서 생성된 날짜(date)에 이 스타일이 적용된당.*/
+.day .date {
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 600;
+    color: #000000; 
+}
+
+/*generateWeeklyCalendar에서 selectedDate(현재 선택된 날짜)와 같은 날짜인 경우 .day.today 클래스가 추가된당.*/
+.day.today .date {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background-color: #FF9A95; 
+    color: #FFFFFF; 
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+/*generateWeeklyCalendar에서 생성된 요일 이름(dayName)의 첫 번째 span 요소.*/
+.day span:first-child {
+    font-size: 10px; 
+    letter-spacing: 0.05em; 
+}
+
+
+/*여기부터 월간달력*/
+
+
+/* 캘린더 버튼 */
+#calendarButton {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* 모달 스타일 */
+#calendarModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달 내용 */
+.modal-content {
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.modal-header {
+    display: flex; /* Flexbox를 사용해 요소를 한 줄로 배치 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 수직 방향 정렬 */
+    gap: 10px; /* 버튼과 텍스트 사이 간격 */
+    margin-bottom: 1
+    0px;
+}
+#modalTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+/* 이전/다음 달 버튼 */
+.nav-button {
+    border: none;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #FF9A95;
+}
+
+.nav-button:hover {
+    color: #F77F7F;
+}
+
+/* 닫기 버튼 */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 요일 스타일 */
+.weekday-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #B0B0B0;
+    text-align: center;
+}
+
+/* 달력 스타일 */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.calendar-cell {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.calendar-cell:hover {
+    background-color: #F2F2F2;
+}
+
+.calendar-cell.today {
+    background-color: #FF9A95;
+    color: #FFFFFF;
+}
+
+.calendar-cell.selected {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* 이동하기 버튼 */
+.move-button {
+    margin-top: 20px;
+    width: calc(100% - 40px); /* 좌우 여백 포함한 중앙 정렬 */
+    padding: 10px;
+    background-color: #FF9A95;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block; /* 중앙 정렬 보장 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.move-button:hover {
+    background-color: #F77F7F;
+}
+
+#backToTodayContainer {
+    text-align: left; /* 왼쪽 정렬 */
+    margin: 10px 20px; /* 위, 아래 여백과 좌우 여백 */
+    font-size: 16px; /* 글자 크기 */
+}
+
+#backToTodayButton {
+    background: none;
+    border: none;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+#backToTodayButton:hover {
+    color: #FF9A95; /* 마우스를 올릴 때 색상 변경 */
+}
+
+
+
+
+/*아침 체크리스트*/
+
+.hidden {
+    display: none;
+}
+
+#morningDropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+#morningDropdown li {
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #FDECC8; /* 노란색 배경 */
+    color: black; /* 검은색 글씨 */
+    padding: 4px; /* 내부 여백 */
+    margin: 5px 5px 5px; /* 항목 간 간격 */
+    list-style-type: none; /* 기본 리스트 점 제거 */
+    font-size: 16px; /* 글씨 크기 */
+}
+
+#morningDropdown li:hover {
+    background-color: #fdd786;
+}
+
+#morningSelectedList {
+    display: flex;
+    flex-direction: column; /* 항목을 세로로 정렬 */
+    gap: 15px; /* 항목 간 간격을 15px로 설정 */
+    
+}
+
+#morning_checklist {
+    display: flex;
+    flex-direction: column; /* 항목을 세로로 배치 */
+    gap: 20px; /* 버튼과 리스트 사이의 간격 설정 */
+}
+
+.circular-checkbox {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #FF9A95; /* 체크되지 않은 테두리 색상 */
+    border-radius: 50%; /* 원형 모양 */
+    background-color: transparent; /* 체크되지 않은 경우 배경 투명 */
+    cursor: pointer;
+}
+
+.circular-checkbox.checked {
+    background-color: #FF9A95; /* 체크된 경우 배경색 */
+    border: 2px solid #FF9A95; /* 체크된 경우 테두리와 배경색 동일 */
+}
+
+.circular-checkbox.checked::after {
+    content: "✔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: white; /* 체크 표시 색상 */
+}
+
+/*저녁 체크리스트*/
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#eveningDropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+#eveningDropdown li {
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #D3E5EF; 
+    color: black; /* 검은색 글씨 */
+    padding: 4px; /* 내부 여백 */
+    margin: 5px 5px 5px; /* 항목 간 간격 */
+    list-style-type: none; /* 기본 리스트 점 제거 */
+    font-size: 16px; /* 글씨 크기 */
+}
+
+#eveningDropdown li:hover {
+    background-color: #a7d7f0;
+}
+
+#eveningSelectedList {
+    display: flex;
+    flex-direction: column; /* 항목을 세로로 정렬 */
+    gap: 15px; /* 항목 간 간격을 15px로 설정 */
+}
+
+#evening_checklist {
+    display: flex;
+    flex-direction: column; /* 항목을 세로로 배치 */
+    gap: 20px; /* 버튼과 리스트 사이의 간격 설정 */
+}
+
+/* 동그라미 체크박스 스타일 */
+.circular-checkbox {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #FF9A95; /* 체크되지 않은 테두리 색상 */
+    border-radius: 50%; /* 원형 모양 */
+    background-color: transparent; /* 체크되지 않은 경우 배경 투명 */
+    cursor: pointer;
+}
+
+.circular-checkbox.checked {
+    background-color: #FF9A95; /* 체크된 경우 배경색 */
+    border: 2px solid #FF9A95; /* 체크된 경우 테두리와 배경색 동일 */
+}
+
+.circular-checkbox.checked::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-weight: bold;
+    color: white; /* 체크 표시 색상 */
+}
+
+
+
+
+/* 삭제 버튼 스타일 */
+.delete-icon {
+    width: 32px; /* 삭제 아이콘 크기 */
+    height: 23px; /* 삭제 아이콘 크기 */
+    cursor: pointer; /* 마우스 포인터 변경 */
+    display: none; /* 초기 상태에서 숨김 */
+    margin-left: 5px; 
+}
+
+.delete-icon:hover {
+    opacity: 0.8; /* 마우스 오버 시 약간 투명도 조정 */
+    transform: scale(1.1); /* 크기 약간 확대 */
+    transition: all 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+/* 아침 텍스트 스타일 */
+.morning-text {
+    background-color: #FDECC8; /* 노란색 배경 */
+    color: black; /* 검은색 글씨 */
+    padding: 2px; /* 내부 여백 */
+    border-radius: 3px; /* 모서리를 살짝 둥글게 */
+    display: inline-flex; /* 삭제 버튼과 정렬을 위해 설정 */
+    align-items: center; /* 삭제 버튼과 텍스트 수직 정렬 */
+    gap: 5px; /* 텍스트와 삭제 버튼 간격 */
+}
+
+/* 저녁 텍스트 스타일 */
+.evening-text {
+    background-color: #D3E5EF; /* 파란색 배경 */
+    color: black; /* 검은색 글씨 */
+    padding: 2px; /* 내부 여백 */
+    border-radius: 3px; /* 모서리를 살짝 둥글게 */
+    display: inline-flex; /* 삭제 버튼과 정렬을 위해 설정 */
+    align-items: center; /* 삭제 버튼과 텍스트 수직 정렬 */
+}
+
+#morningMissionFlag,
+#eveningMissionFlag {
+    animation: fadeIn 0.5s ease-in-out; /* 부드럽게 나타나는 애니메이션 */
+}
+
+/* 부드럽게 나타나는 애니메이션 추가 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ✅ 아이폰 텍스트 깨짐 방지 */
+body, html {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased; /* 텍스트 부드럽게 */
+    -moz-osx-font-smoothing: grayscale; /* 텍스트 부드럽게 */
+    text-rendering: optimizeLegibility; /* 글자 가독성 향상 */
+}
+
+.delete-icon {
+    display: none; /* 기본적으로 안 보이게 */
+}
+
+.delete-icon.visible {
+    display: inline-block; /* 클릭하면 나타남 */
+}

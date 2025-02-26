@@ -1,0 +1,112 @@
+#header {
+    display: flex;
+    justify-content: center;
+}
+
+.mymmsUpper_left {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+#mymmsUpper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#nameInput,
+#periodInput,
+#addButton {
+    margin-bottom: 20px; /* 요소들 사이의 공백 */
+    padding: 20px;
+}
+
+#nameInput input[type="text"] {
+    background: rgba(217, 217, 217, 0.08);
+    border: 0.3px solid #000000;
+    border-radius: 3px;
+    width: 186px;
+    height: 35px;
+    box-sizing: border-box; /* 테두리를 포함한 크기 조정 */
+    left: 42px;
+    top: 213px;
+}
+
+.time-selector {
+    display: flex; /* 가로 정렬 */
+    flex-wrap: nowrap; /* 한 줄에 배치 */
+    justify-content: space-between; /* 버튼 간격 조정 */
+    gap: 5px; /* 버튼 사이 여백 */
+    overflow-x: auto; /* 버튼이 넘칠 경우 스크롤 */
+    padding: 5px 0; /* 위아래 여백 */
+    white-space: nowrap; /* 버튼 줄 바꿈 방지 */
+}
+.time-option {
+    width: 25px;
+}
+
+/* 추가 버튼 스타일 */
+#addButton button {
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    width: 105px;
+    height: 30px;
+    background: #FF9A95;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    display: flex; /* 버튼 내부 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#addButton button:active {
+    background-color: #ff7979;
+    transform: scale(1); /* 클릭 시 크기 복원 */
+}
+
+/* 버튼 스타일 */
+.time-option {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #999999;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* 선택된 버튼 */
+.time-option.active {
+    background-color: #ff7979;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(255, 121, 121, 0.5);
+}
+
+/* 버튼에 마우스 올릴 때
+.time-option:hover {
+    background-color: #ffe5e5;
+}
+*/
+
+/* 기본 버튼 스타일 초기화 */
+button {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* ✅ 아이폰 텍스트 깨짐 방지 */
+body, html {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased; /* 텍스트 부드럽게 */
+    -moz-osx-font-smoothing: grayscale; /* 텍스트 부드럽게 */
+    text-rendering: optimizeLegibility; /* 글자 가독성 향상 */
+}

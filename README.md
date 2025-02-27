@@ -90,6 +90,7 @@ $ php -S localhost:8000
 ## 아키텍쳐 
 ### 디렉토리 구조
 ```
+├── README.md              📁리드미
 ├── index.php              📁주요 페이지
 ├── myPage.php
 ├── myMissionSettings.php

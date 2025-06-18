@@ -3,7 +3,7 @@ let morningMissionFlag;
 let eveningMissionFlag;
 let activeDropdown = null; // 현재 열려 있는 드롭다운을 추적
 let dropdownInterval = null; // 드롭다운 위치 업데이트 간격 추적
-let isDropdownLoading = false; // 🔹 드롭다운 데이터 로딩 중인지 추적
+let isDropdownLoading = false; // 드롭다운 데이터 로딩 중인지 추적
 
 // ✅ 선택된 날짜 가져오기
 function getSelectedDate() {
@@ -236,7 +236,7 @@ function addSelectedActivity(activity, selectedList, textClassName, missionFlag,
     deleteButton.style.width = "30px";
     deleteButton.style.height = "20px";
 
-    // 삭제 버튼 클릭 시 이벤트 리스너 추가
+    // ✅ 삭제 버튼 클릭 시 이벤트 리스너 추가
     deleteButton.addEventListener("click", () => {
         const missionAttrId = circularCheckbox.getAttribute("data-mission-attr-id");
 

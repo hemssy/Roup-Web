@@ -10,20 +10,6 @@
 ## 프로젝트 소개
 ROUP는 Routine Opens Up Possibilities의 약자로, 사용자가 아침과 저녁 루틴을 효율적으로 관리할 수 있도록 도와주는 웹 애플리케이션입니다. 마이페이지에서 개인 맞춤 루틴을 설정하고, 메인페이지로 넘어와 날짜별 루틴을 손쉽게 관리할 수 있습니다. 주간 및 월간 캘린더를 통해 매일의 기록 또한 파악 가능하고, 간결한 인터페이스를 제공하여 누구나 편리하게 사용할 수 있습니다. 루프는 AWS EC2 기반으로 운영되며, PHP와 RDS를 통해 데이터를 저장하고 관리합니다. 
 
-## 실행 가이드 🚀
-### Requirements
-- **PHP 8.0 이상**
-- **Git**
-  
-### Installation
-```
-$ git clone https://github.com/hemssy/roup.git
-$ cd roup
-
-# PHP 내장 서버 실행
-$ php -S localhost:8000
-```
-
 ---
 ## Stacks 🐈
 ### Environment
@@ -61,54 +47,40 @@ $ php -S localhost:8000
 
 ---
 ## 디렉토리 구조
-```
-roup/
-├── README.md
-│
-├── assets/                # CSS, JS, 이미지 
-│   ├── css/
-│   │   ├── mainPageStyle.css
-│   │   ├── myPageStyle.css
-│   │   ├── myMissionSettingsStyle.css
-│   │   ├── emsOK.css
-│   │   ├── mmsOK.css
-│   │   ├── myEMS.css
-│   │   └── myMMS.css
-│   │
-│   ├── js/
-│   │   ├── checklist.js
-│   │   ├── mainTitle.js
-│   │   ├── monthlyCalendar.js
-│   │   ├── weeklyCalendar.js
-│   │   └── myMS.js
-│   │
-│   └── img/
-│       ├── calendarIcon.png
-│       ├── closeIcon.png
-│       ├── deleteIcon.png
-│       ├── headerImg.png
-│       ├── plusIcon.png
-│       └── settingsIcon.png
-│
-├── includes/              # DB 연결
-│   └── db.php  
-│
-├── api/                   # AJAX나 비동기 요청용 PHP 파일들
-│   ├── fetchDropdownData.php
-│   ├── fetchMissionData.php
-│   ├── saveMissionAttr.php
-│   ├── updateCompleteFlag.php
-│   └── deleteMissionAttr.php
-│
-├── pages/              # 주요 페이지 (화면 단위)
-│   ├── index.php
-│   ├── myPage.php
-│   ├── myMissionSettings.php
-│   ├── myMMS.php
-│   ├── myEMS.php
-│   ├── mmsOK.php
-│   └── emsOK.php
-│
-└── .gitignore             
 
 ```
+roup/
+├── README.md              📁리드미
+├── .gitignore
+├── index.php              📁주요 페이지
+├── myPage.php
+├── myMissionSettings.php
+├── myMMS.php
+├── myEMS.php
+├── mmsOK.php
+├── emsOK.php
+├── db.php                 📁PHP, DB 연동
+├── fetchDropdownData.php
+├── fetchMissionData.php
+├── saveMissionAttr.php
+├── updateCompleteFlag.php
+├── deleteMissionAttr.php
+├── mainPageStyle.css      📁스타일
+├── myPageStyle.css
+├── myMissionSettingsStyle.css
+├── emsOK.css
+├── mmsOK.css
+├── myEMS.css
+├── myMMS.css
+├── checklist.js           📁기능 스크립트
+├── mainTitle.js
+├── monthlyCalendar.js
+├── weeklyCalendar.js
+├── myMS.js
+├── calendarIcon.png       📁이미지 및 아이콘
+├── closeIcon.png
+├── deleteIcon.png
+├── headerImg.png
+├── plusIcon.png
+└── settingsIcon.png
+```    

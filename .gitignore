@@ -1,0 +1,41 @@
+# macOS 시스템 파일
+.DS_Store
+
+# Xcode 임시/유저 데이터
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Xcode 관련 로그 / 임시파일
+*.xcarchive
+*.xcworkspace/xcuserdata/
+*.xcuserdatad
+*.moved-aside
+*.hmap
+*.ipa
+*.log
+
+# Playground
+timeline.xctimeline
+playground.xcworkspace
+
+# Environment (환경 변수 파일)
+.env

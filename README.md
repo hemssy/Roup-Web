@@ -7,30 +7,6 @@
 루틴관리 웹 애플리케이션
 > 개발기간:2025.01 ~ 2025.02
 
-## 배포 주소
-> http://3.34.245.64
-
-## 웹개발팀 소개
-
-<table width="200%" align="center">
-  <tr>
-    <td align="center"><b>신서연</b></td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img width="200" src="https://github.com/user-attachments/assets/04144bb3-1196-40be-ad4f-29908390dc7e">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/hemssy">@hemssy</a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">성신여자대학교 컴퓨터공학과</td>
-  </tr>
-</table>
-
 ## 프로젝트 소개
 ROUP는 Routine Opens Up Possibilities의 약자로, 사용자가 아침과 저녁 루틴을 효율적으로 관리할 수 있도록 도와주는 웹 애플리케이션입니다. 마이페이지에서 개인 맞춤 루틴을 설정하고, 메인페이지로 넘어와 날짜별 루틴을 손쉽게 관리할 수 있습니다. 주간 및 월간 캘린더를 통해 매일의 기록 또한 파악 가능하고, 간결한 인터페이스를 제공하여 누구나 편리하게 사용할 수 있습니다. 루프는 AWS EC2 기반으로 운영되며, PHP와 RDS를 통해 데이터를 저장하고 관리합니다. 
 
@@ -58,9 +34,6 @@ $ php -S localhost:8000
 
 ### OS
 <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> <img src="https://img.shields.io/badge/amazonec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=black">
-
-### Communication
-<img src="https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"> <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
 
 ---
 ## 화면 구성

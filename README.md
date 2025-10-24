@@ -60,39 +60,55 @@ $ php -S localhost:8000
 - JavaScript를 사용해서 선택한 루틴을 동적으로 추가하고, 드롭다운을 통해 사용자가 설정한 루틴을 불러옴 
 
 ---
-## 아키텍쳐 
-### 디렉토리 구조
+## 디렉토리 구조
 ```
-├── README.md              📁리드미
-├── index.php              📁주요 페이지
-├── myPage.php
-├── myMissionSettings.php
-├── myMMS.php
-├── myEMS.php
-├── mmsOK.php
-├── emsOK.php
-├── db.php                 📁PHP, DB 연동
-├── fetchDropdownData.php
-├── fetchMissionData.php
-├── saveMissionAttr.php
-├── updateCompleteFlag.php
-├── deleteMissionAttr.php
-├── mainPageStyle.css      📁스타일
-├── myPageStyle.css
-├── myMissionSettingsStyle.css
-├── emsOK.css
-├── mmsOK.css
-├── myEMS.css
-├── myMMS.css
-├── checklist.js           📁기능 스크립트
-├── mainTitle.js
-├── monthlyCalendar.js
-├── weeklyCalendar.js
-├── myMS.js
-├── calendarIcon.png       📁이미지 및 아이콘
-├── closeIcon.png
-├── deleteIcon.png
-├── headerImg.png
-├── plusIcon.png
-└── settingsIcon.png
+project_ROUP/
+├── README.md
+│
+├── assets/                # CSS, JS, 이미지 
+│   ├── css/
+│   │   ├── mainPageStyle.css
+│   │   ├── myPageStyle.css
+│   │   ├── myMissionSettingsStyle.css
+│   │   ├── emsOK.css
+│   │   ├── mmsOK.css
+│   │   ├── myEMS.css
+│   │   └── myMMS.css
+│   │
+│   ├── js/
+│   │   ├── checklist.js
+│   │   ├── mainTitle.js
+│   │   ├── monthlyCalendar.js
+│   │   ├── weeklyCalendar.js
+│   │   └── myMS.js
+│   │
+│   └── img/
+│       ├── calendarIcon.png
+│       ├── closeIcon.png
+│       ├── deleteIcon.png
+│       ├── headerImg.png
+│       ├── plusIcon.png
+│       └── settingsIcon.png
+│
+├── includes/              # DB 연결
+│   └── db.php  
+│
+├── api/                   # AJAX나 비동기 요청용 PHP 파일들
+│   ├── fetchDropdownData.php
+│   ├── fetchMissionData.php
+│   ├── saveMissionAttr.php
+│   ├── updateCompleteFlag.php
+│   └── deleteMissionAttr.php
+│
+├── pages/              # 주요 페이지 (화면 단위)
+│   ├── index.php
+│   ├── myPage.php
+│   ├── myMissionSettings.php
+│   ├── myMMS.php
+│   ├── myEMS.php
+│   ├── mmsOK.php
+│   └── emsOK.php
+│
+└── .gitignore             
+
 ```
